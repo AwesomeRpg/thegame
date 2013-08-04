@@ -1,0 +1,236 @@
+story = '''your parants were kidnapped by goblins so you wish to seek revenge...
+people tell you to deal with it poeple are killed every day and there is no possiblity that they are alive.
+But you can not deal with it you need closer so you go out into the Dark Forest...
+your fate awaits you......'''
+from random import choice
+import time
+def attack(enemy):
+    print ('\n do you use:')
+    for x in powers:
+        print ('\t'+x)
+    use = raw_input()
+    global MonsterHp
+    MonsterHp -= powers[use]
+    global YouHp
+    YouHp -= eval(enemy)
+    print ('opponit uses '+enemy)
+class FateDoom(UserWarning):
+    pass
+class InputError(ValueError):
+    pass
+
+print (story)
+name = raw_input('you meet a young woman \n\nWoman: what is your name young hero?\nyou:')
+print ('Woman: well hello '+name)
+print (name+': what is yours?')
+print ('Woman: ha \'tis a story for \'nother day\n')
+print ('After a minute of silence you and the mystery woman come across a sword.')
+print ('Woman: you might need this')
+print ('*picks up sword and hands it to you*')
+print ('*Woman runs away in fear*')
+print (name+': WAIT!!! WHERE ARE YOU GOING?!?!?')
+print ('you turn and see why she has fleed...\n\nTHERE ARE EMPTY EYED SOULESS ZOMBIES BEHIND YOU!!!')
+atack = int(raw_input('(1)do you run or \n(2)take a stand?'))
+if atack == 1:
+    print ('you turn and follow the woman as fast as you can')
+    print (name+': *pant* *pant* so thats why you ran away')
+    print ('Woman: *sarcastacly* so valent!!!')
+else:
+    print ('you slice every single zombies\' head off but one\nyou see it is twice the size of the rest')
+    boss = raw_input('do you go for the (1)heart or the (2)head')
+    if int(boss) == 2:
+        raise FateDoom('THE ZOMBIE ATE YOUR BRAINS!!!')
+    elif int(boss)== 1:
+        print ('you beat it!!!')
+    print ('Woman: so brave!!!!!I owe you my life!!')
+print ('Woman: we should make camp for now')
+print (name+': ok')
+print ('\n\n...\n\n')
+print (name+': *yawn* good morning')
+print ('Woman: *SNORRRREEEE*')
+print (name+': ok then...')
+wake = raw_input('do you (1)wake her (2)or let her be?')
+if wake == '1':
+    raise FateDoom('Woman: YOU DARE WAKE ME?!?\nwoman kills you')
+else:
+    print ('you slowly walk back to your te...\nRRROOOOOOAAAAAARRRRR')
+    print ('you see the woman has killed a Bugbear')
+print (name+': thank you so much')
+print ('Woman: you welcome!')
+print ('\n...\n')
+powers = dict()
+powers['sword'] = 10
+print ('you find a scroll in the woods')
+scroll = raw_input('what does it say?')
+powers[scroll] = 5
+print ('\t\tSTATUS UPDATE: '+scroll+' has been learned!')
+print ('\n...\nWoman: no that doesn\'t look good.')
+print (name+':*gulp*\nyou see a giant brainbeast in front of you')
+MonsterHp = 10
+slap = 0.1
+punch = 1
+fraility = 7
+YouHp = 100
+while MonsterHp > 0:
+    if YouHp <= 0:
+        raise FateDoom('Monster has killed you')
+    attack(choice(['slap','punch','fraility']))
+YouHp = int(YouHp)
+print ('\t\tSTATUS UPDATE: YOU HAVE KILLED FIRST MONSTER ALL ATTACKS DOUBLE IN DAMAGE')
+for x in powers:
+    powers[x] *= 2
+print ('\t\tSTATUS UPDATE: HP = ' + str(int(YouHp)))
+print ('\nWoman: Good Job!')
+print (name+': Nah it was notin\'')
+print ('Woman: Impressive anyway though')
+print ('Woman: Should we make camp?')
+camp = raw_input()
+if camp.lower() == 'yes':
+    raise FateDoom('\nAt night banndents come and torrture you and slowly kill you')
+elif camp.lower() == 'no':
+    pass
+else:
+    raise InputError('either input yes or no')
+print ('Woman: Why ever not?')
+print (name + ': it isnt safe here I can feel it.')
+print ('\nCAAAAAACAAAAA!!!!\n')
+print (name + ': is that a velociren?')
+print ('Woman: oh thats not good')
+print (name+': understatment of the year!!!')
+MonsterHp = 100
+claw = 10
+call = 12
+yelp = 2
+while MonsterHp > 0:
+    if YouHp <= 0:
+        raise FateDoom('monster killed you!')
+    attack(choice(['claw','yelp','call','call']))
+YouHp = int(YouHp)
+print ('\t\tSTATUS UPDATE: HP = '+str(YouHp))
+print ('Woman: good job but your health appears low take this health elixer.')
+YouHp += 25
+print ('\t\tSTATUS UPDATE: HP increased by 25 new HP = '+str(int(YouHp)))
+print ('Woman: thats better now lets make camp')
+print (name+': yes we should.')
+print ('\n...\n')
+print (name+': whats this?')
+print ('Women: its a spell amplifier!')
+powers[scroll] *= 2
+print ('\t\tSTATUS UPDATE: '+scroll+' is doubled in damage. New spell damage is'+str(powers[scroll]))
+print (name+': who is leaving these items all over the place?')
+print ('Women: the goblins hored')
+print (name+': they might have my mom and dad!')
+print ('Women: NO WAIT')
+print (name + ': huff huff!')
+print ('ohh what do we have here? DINNER!!!')
+print ('Women: its a goblin!')
+MonsterHp = 40
+loot = 3
+slap = 1
+punch = 10
+while MonsterHp > 0:
+    MonsterHp += 0.5
+    if YouHp <= 0:
+        raise FateDoom('monster killed you!')
+    attack(choice(['loot','slap','punch','loot']))
+YouHp = int(YouHp)
+print ('\t\tSTATUS UPDATE: LEVEL UP GAINED BANISH')
+powers['banish'] = 25
+print ('Women: here, idiot, take this MegaHeal Elixer and don\'t do that again!')
+YouHp += 75
+print ('\t\tSTATUS UPDATE: Hp = '+str(YouHp))
+print ('Goblins: Noooooooo Master we shall avenge you!!!')
+print (name + ': ****')
+MonsterHp = 300
+MASS = 20
+while MonsterHp > 0:
+    MonsterHp += 5
+    if YouHp <= 0:
+        raise FateDoom('Goblins killed you!')
+    attack(choice(['loot','slap','punch','loot','loot','loot','slap','MASS']))
+print ('\t\tSTATUS UPDATE: killed goblin civilians')
+print ('Women: lucky for you they weren\'t the real deal they\'re only civilians! I can tell from they\'re face design.')
+print (name+': how would you know that?')
+print ('Women: listen, kid their is some things you should know and other things you shouldn\'t')
+print (name+': Hmph...')
+print ('Women: we should go!')
+print ('Zombie Goblin: a brit layt for that don\'t you thik?  BRAINS')
+print (name+': AHHHHHH!')
+MonsterHp = 150
+chomp = 25
+HeadChomp = 40
+Brainless = -5  #zombies are so dumb
+heal = 2
+while MonsterHp > 0:
+    if YouHp < 25 and heal > 0:
+        print ('Woman: HEAL YOUR SELF QUICK')
+        YouHp += 50
+        heal -= 1
+        print ('\t\tSTATUS UPDATE: Health is '+str(YouHp))
+    elif YouHp <= 0:
+        raise FateDoom('a Monster defeatin you!\n\n(Wimp!)')
+    attack(choice(['loot','slap','punch','loot','chomp','chomp','chomp','HeadChomp','Brainless']))
+    MonsterHp += 7
+print ('\t\tSTATUS UPDATE: LEVEL UP UPGRADE SWORD OR '+scroll)
+upgrade = raw_input('?')
+powers[upgrade]+=25
+YouHp = 250
+print ('\t\tSTATUS UPDATE: HP has been upgraded too new HP is '+ str(YouHp))
+print ('Women: Good job!  Now lets go!')
+print (name+': Ya don\'t wanna face a zombie gob...')
+print ('Women: Don\'t say it! Then you might have to fight...')
+print ('Zombie goblin group: oh but he already does!')
+print ('Women: RUNNNNN!!!!!')
+print (name+': AAAAAAAAAAHHHHHHHHHHHH!!!!!!!!!')
+print ('\n...\n')
+print (name+': are we safe?')
+print ('BRAINS!!!')
+print ('\n...\n')
+print ('Women: we are at the border with the grasslands. It might not be safe there either!')
+print (name+': GRASSLAND?!? No one ever told me about those! Well, what choice do we got?')
+print ('\t\tSTATUS UPDATE: entered Malviolnet Grasslands')
+print ('Women: Welcome to the Malviolnet Grasslands')
+print (name+': whats that?')
+print ('Women: its a earth elemental stay away from it!')
+MonsterHp = 500
+slam = 24
+roar = 10
+pound = 15
+heal += 2
+while MonsterHp > 0:
+    if YouHp < 25 and heal > 0:
+        print ('Woman: HEAL YOUR SELF QUICK')
+        YouHp += 50
+        heal -= 1
+        print ('\t\tSTATUS UPDATE: Health is '+str(YouHp))
+    elif YouHp <= 0:
+        raise FateDoom('a Monster defeatin you!\n\n(Sucka!)')
+    attack(choice(['slam','pound','pound','roar','slap']))
+    MonsterHp += 7
+print ('\t\tSTATUS UPDATE: COLECTED ELEMENTAL SOUL, POUND LEARNED')
+power['pound'] = power['sword']+5
+print ('Women: stop looking for trouble!')
+print ('\n...\n')
+print ('Unknown creature: Hello!')
+print (name+': what was that?')
+print ('Woman: I don\'t know!')
+print ('Unknown creature: Hello I will eat you now!')
+print ('Women: where are you?')
+print ('Unknown creature: Isn\'t that the point?')
+print ('Women: Its a ghost. You have to use '+scroll)
+spook = 5
+telekinese = 70
+ghostcopy = powers
+powers[scroll] = 60
+(powers['pound'],powers['sword'],powers['banish'])= (1,0,10)
+heal += 2
+while MonsterHp > 0:
+    if YouHp < 25 and heal > 0:
+        print ('Woman: HEAL YOUR SELF QUICK!!')
+        YouHp += 50
+        heal -= 1
+        print ('\t\tSTATUS UPDATE: Health is '+str(YouHp))
+    elif YouHp <= 0:
+        raise FateDoom('a Ghost defeatin you!\n\n(Sucka!)')
+    attack(choice(['spook','spook','telekinese','roar']))
+powers = ghostcopy
