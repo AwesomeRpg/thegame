@@ -1,5 +1,5 @@
-story = '''your parants were kidnapped by goblins so you wish to seek revenge...
-people tell you to deal with it poeple are killed every day and there is no possiblity that they are alive.
+story = '''your parents were kidnapped by goblins so you wish to seek revenge...
+people tell you to deal with it people are killed every day and there is no possibility that they are alive.
 But you can not deal with it you need closer so you go out into the Dark Forest...
 your fate awaits you......'''
 raw_input = input
@@ -122,7 +122,7 @@ while MonsterHp > 0:
     attack(choice(['claw','yelp','call','call']))
 YouHp = int(YouHp)
 print ('\t\tSTATUS UPDATE: HP = '+str(YouHp))
-print ('Woman: good job but your health appears low take this health elixer.')
+print ('Woman: good job but your health appears low, take this health elixer.')
 YouHp += 25
 print ('\t\tSTATUS UPDATE: HP increased by 25 new HP = '+str(int(YouHp)))
 print ('Woman: thats better now lets make camp')
@@ -243,9 +243,9 @@ ghostcopy = powers
 powers[scroll] = 30
 (powers['pound'],powers['sword'],powers['banish'])= (1,0,15)
 heal += 2
-while MonsterHp > 0:  #quick glich if you and monster are tied at 0 monster dies and you win!
+while MonsterHp > 0:  #quick glitch if you and monster are tied at 0 monster dies and you win!
     if YouHp < 25 and heal > 0:
-        print ('Woman: HEAL YOUR SELF QUICK!!!')
+        print ('Woman: HEAL YOURSELF QUICK!!!')
         YouHp += 50
         heal -= 1
         print ('\t\tSTATUS UPDATE: Health is '+str(YouHp))
@@ -302,7 +302,7 @@ elif up == 2:
             powers[x] += 5
             continue
         powers[x]*=2
-print ('Women: it looks like you need some practice here fight me.')
+print ('Women: it looks like you need some practice, here, fight me.')
 print (name+': NO!!!')
 print ('Women: why not afraid?')
 print (name+': no.')
@@ -341,7 +341,7 @@ erupt = 15
 heal += 2
 while MonsterHp > 0:
     if YouHp < 25 and heal > 0:
-        print ('Woman: HEAL YOUR SELF QUICK!!!')
+        print ('Woman: HEAL YOURSELF QUICK!!!')
         YouHp += 50
         heal -= 1
         print ('\t\tSTATUS UPDATE: Health is '+str(YouHp))
@@ -358,7 +358,7 @@ avenge = 100
 heal += 1
 while MonsterHp > 0:
     if YouHp < 25 and heal > 0:
-        print ('Woman: HEAL YOUR SELF QUICK!!!')
+        print ('Woman: HEAL YOURSELF QUICK!!!')
         YouHp += 50
         heal -= 1
         print ('\t\tSTATUS UPDATE: Health is '+str(YouHp))
