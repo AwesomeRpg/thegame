@@ -1,5 +1,5 @@
-story = '''your parents were kidnapped by goblins so you wish to seek revenge...
-people tell you to deal with it people are killed every day and there is no possibility that they are alive.
+story = '''your parants were kidnapped by goblins so you wish to seek revenge...
+people tell you to deal with it poeple are killed every day and there is no possiblity that they are alive.
 But you can not deal with it you need closer so you go out into the Dark Forest...
 your fate awaits you......'''
 raw_input = input
@@ -122,7 +122,7 @@ while MonsterHp > 0:
     attack(choice(['claw','yelp','call','call']))
 YouHp = int(YouHp)
 print ('\t\tSTATUS UPDATE: HP = '+str(YouHp))
-print ('Woman: good job but your health appears low, take this health elixer.')
+print ('Woman: good job but your health appears low take this health elixer.')
 YouHp += 25
 print ('\t\tSTATUS UPDATE: HP increased by 25 new HP = '+str(int(YouHp)))
 print ('Woman: thats better now lets make camp')
@@ -243,9 +243,9 @@ ghostcopy = powers
 powers[scroll] = 30
 (powers['pound'],powers['sword'],powers['banish'])= (1,0,15)
 heal += 2
-while MonsterHp > 0:  #quick glitch if you and monster are tied at 0 monster dies and you win!
+while MonsterHp > 0:  #quick glich if you and monster are tied at 0 hp monster dies and you win!
     if YouHp < 25 and heal > 0:
-        print ('Woman: HEAL YOURSELF QUICK!!!')
+        print ('Woman: HEAL YOUR SELF QUICK!!!')
         YouHp += 50
         heal -= 1
         print ('\t\tSTATUS UPDATE: Health is '+str(YouHp))
@@ -302,7 +302,9 @@ elif up == 2:
             powers[x] += 5
             continue
         powers[x]*=2
-print ('Women: it looks like you need some practice, here, fight me.')
+else:
+    print ('sorry lookes like you aren\'t gonna upgrade anything.')
+print ('Women: it looks like you need some practice here fight me.')
 print (name+': NO!!!')
 print ('Women: why not afraid?')
 print (name+': no.')
@@ -341,7 +343,7 @@ erupt = 15
 heal += 2
 while MonsterHp > 0:
     if YouHp < 25 and heal > 0:
-        print ('Woman: HEAL YOURSELF QUICK!!!')
+        print ('Woman: HEAL YOUR SELF QUICK!!!')
         YouHp += 50
         heal -= 1
         print ('\t\tSTATUS UPDATE: Health is '+str(YouHp))
@@ -358,7 +360,7 @@ avenge = 100
 heal += 1
 while MonsterHp > 0:
     if YouHp < 25 and heal > 0:
-        print ('Woman: HEAL YOURSELF QUICK!!!')
+        print ('Woman: HEAL YOUR SELF QUICK!!!')
         YouHp += 50
         heal -= 1
         print ('\t\tSTATUS UPDATE: Health is '+str(YouHp))
@@ -366,7 +368,67 @@ while MonsterHp > 0:
         raise FateDoom('wow that flaming kids on a roll!')
     attack(choice(['flame','burn','tan','erupt','flame','burn','burn','avenge','avenge','avenge']))
     YouHp += armour
-print('\t\tSTATUS UPDATE: RUTHLESSLY KILLED A CHILD')
+print ('\t\tSTATUS UPDATE: RUTHLESSLY KILLED A CHILD')
 '''
 so tired worked on this for about five days now UGGGGG!
 '''
+print (name+': lets go back to sleep.')
+print ('Women: alright')
+print ('\n...\n')
+print ('Woman: lets go.')
+print (name+': bu i wanna stay a sleep!')
+print ('Women: too bad we\'re going to go to the fire realm.')
+print (name+': why?!?')
+print ('Women: because I said so.')
+print (name+': fine.')
+print ('\n...\n')
+print ('Women: we are at the border we must cross.')
+print ('STATUS UPDATE: entered the fire realm.')
+print ('Woman: hmmm... \nthe trial splits here should we take the right or left path?')
+path = raw_input(name+':')
+if 'left' in path:
+    print ('voice: friend?')
+    print ('Woman: what was that?')
+    print ('Woman: do we answer it with a yes or no or just move on?')
+    freind = raw_input(name+':')
+    if 'yes' in friend:
+        print ('voice: friend?')
+        print (name+': yessss...')
+        print ('voice: yah!!!')
+        print ('voice: can i go with you?')
+        traval = raw_input(name+':')
+        if 'yes' in traval:
+            print ('voice: thank you for you kindness but this was only a test. And you have passed.')
+            granted = raw_input('voice: so because you have passed i shall give you this the power of ')
+            powers[granted] = 75
+        else:
+            print ('voice: oh thats a shame.')
+    if 'no' in friend or 'off' in friend:
+        print ('voice: thats such a shame now i will kill you!')
+        print ('Woman: it\'s a living flame. Fire powers will only heal it')
+        firecopy = powers
+        powers[scroll] = -10
+        powers['flame ball'] = -25
+        for x in powers:
+            if 'water' in x.lower():
+                powers[x] = firecopy[x]*4
+            elif x == banish:
+                powers[x] += 1
+            else:
+                powers[x] -= 2
+        curse = 50
+        flame = 70
+        flaming_vortex = 100
+        MonsterHp = 310
+        while MonsterHp > 0:
+            if YouHp < 25 and heal > 0:
+                print ('Woman: HEAL YOUR SELF QUICK!!!')
+                YouHp += 50
+                heal -= 1
+                print ('\t\tSTATUS UPDATE: Health is '+str(YouHp))
+            elif YouHp <= 0:
+                raise FateDoom('sucker you got beaten by a burning migit haha!')
+            attack(choice(['flame','burn','tan','erupt','flame','flaming_vortex']))
+            YouHp += armour
+else:
+    pass
